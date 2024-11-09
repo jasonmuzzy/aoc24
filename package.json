@@ -1,0 +1,28 @@
+{
+  "name": "aoc24",
+  "version": "1.0.0",
+  "description": "Advent of Code 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasonmuzzy/aoc24.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasonmuzzy/aoc24/issues"
+  },
+  "homepage": "https://github.com/jasonmuzzy/aoc24#readme",
+  "dependencies": {
+    "aoc-copilot": "^1.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
