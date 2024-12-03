@@ -6,4 +6,32 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
     return answer;
 }
 
-run(__filename, solve, true);
+run(__filename, solve, false); //, {
+    //     "reason": "Irregular format",
+    //     "part1length": 1,
+    //     "inputs": {
+    //         "selector": "code",
+    //         "indexes": []
+    //     },
+    //     "answers": {
+    //         "selector": "code",
+    //         "indexesOrLiterals": []
+    //     // },
+    //     // "additionalInfos": {
+    //     //     "key": "steps",
+    //     //     "selector": "code, em",
+    //     //     "indexes": [],
+    //     //     "transforms": [{
+    //     //     "functions": [
+    //     //             { "split": ["\n"] },
+    //     //             { "at": [-2] },
+    //     //             { "match": ["(?<=Result: ).*", ""] },
+    //     //             { "at": [0] }
+    //     //         ], "appliesTo": [0, 1, 2, 3]
+    //     //     }]
+    //     }
+    // }); //, [{
+    //     part: 1,
+    //     inputs: ['Test case input'],
+    //     answer: 'Expected answer'
+    // }]);
