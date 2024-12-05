@@ -1,6 +1,6 @@
 import { run } from 'aoc-copilot';
 
-// -------Part 1--------   -------Part 2--------
+//       -------Part 1--------   -------Part 2--------
 // Day       Time  Rank  Score       Time  Rank  Score
 //   1   00:07:01  3058      0   00:11:22  3167      0
 

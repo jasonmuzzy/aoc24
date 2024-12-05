@@ -1,6 +1,6 @@
 import { run } from 'aoc-copilot';
 
-// -------Part 1--------   -------Part 2--------
+//       -------Part 1--------   -------Part 2--------
 // Day       Time  Rank  Score       Time  Rank  Score
 //   3   00:05:49  1942      0   00:42:15  8209      0
 
@@ -14,4 +14,4 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
     return answer;
 }
 
-run(__filename, solve, true);
+run(__filename, solve);
