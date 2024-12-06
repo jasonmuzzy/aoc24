@@ -14,7 +14,7 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
     }
     for (let update of updates) {
         const nums = update.split(',').map(Number);
-        const ordered = nums.toSorted((a, b) => befores.get(a)?.has(b) ? -1 : 1);
+        const ordered = nums.toSorted((a, b) => befores.get(a)?.has(b) ? -1 : 1); // Safe: every pair of updates exists as either A|B or B|A
         const inOrder = nums.every((n, i) => n === ordered[i]);
         answer += part === 1 && inOrder
             ? nums[Math.floor(nums.length / 2)]
