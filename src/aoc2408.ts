@@ -5,7 +5,6 @@ import { run } from 'aoc-copilot';
 //   8   00:17:27   2013      0   00:19:19   1159      0
 
 async function solve(inputs: string[], part: number, test: boolean, additionalInfo?: { [key: string]: string }): Promise<number | string> {
-    let answer = 0;
     const map = inputs.map(row => row.split(''));
     const antennas: Map<string, string[]> = new Map();
     for (let [y, row] of map.entries()) {
@@ -35,8 +34,7 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
             }
         }
     }
-    answer = antinodes.size;
-    return answer;
+    return antinodes.size;
 }
 
 run(__filename, solve);
