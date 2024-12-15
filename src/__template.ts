@@ -1,4 +1,5 @@
 import { NotImplemented, run } from 'aoc-copilot';
+// import * as utils from 'aoc-copilot/dist/utils';
 
 async function solve(inputs: string[], part: number, test: boolean, additionalInfo?: { [key: string]: string }): Promise<number | string> {
     let answer: number | string = 0;
