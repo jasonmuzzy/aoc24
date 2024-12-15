@@ -5,7 +5,7 @@ import { run } from 'aoc-copilot';
 //   7   00:38:33   6382      0   00:45:37   5472      0
 
 async function solve(inputs: string[], part: number, test: boolean, additionalInfo?: { [key: string]: string }): Promise<number | string> {
-    let answer: number | string = 0;
+    let answer = 0;
     for (let input of inputs) {
         const [check, ...rest] = (input.match(/-?\d+/g) ?? []).map(Number);
         for (let i = 0; i < (part === 1 ? 2 : 3) ** (rest.length - 1); i++) {

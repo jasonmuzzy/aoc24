@@ -1,5 +1,4 @@
 import { run } from 'aoc-copilot';
-import { xyArray } from 'aoc-copilot/dist/utils';
 
 //       --------Part 1--------   --------Part 2--------
 // Day       Time   Rank  Score       Time   Rank  Score
@@ -10,10 +9,12 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
     if (part === 1) return walk(lab);
     else {
         let answer = 0;
-        for (let [x, y] of xyArray(lab)) {
-            if (lab[y][x] === '.') {
-                const obstructed = lab.map((row, y1) => row.map((cell, x1) => x1 === x && y1 === y ? '#' : cell));
-                if (walk(obstructed) === Infinity) answer++;
+        for (let [y, row] of lab.entries()) {
+            for (let [x, cell] of row.entries()) {
+                if (cell === '.') {
+                    const obstructed = lab.map((row1, y1) => row1.map((cell1, x1) => x1 === x && y1 === y ? '#' : cell1));
+                    if (walk(obstructed) === Infinity) answer++;
+                }
             }
         }
         return answer;
