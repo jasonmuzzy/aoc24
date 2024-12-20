@@ -1,5 +1,9 @@
 import { run } from 'aoc-copilot';
 
+//       --------Part 1--------   --------Part 2--------
+// Day       Time   Rank  Score       Time   Rank  Score
+//  14   16:00:37  29267      0   19:33:53  27327      0
+
 async function solve(inputs: string[], part: number, test: boolean, additionalInfo?: { [key: string]: string }): Promise<number | string> {
     const mod = (n: number, d: number) => { return ((n % d) + d) % d; }
     let quadrants = [0, 0, 0, 0];

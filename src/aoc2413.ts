@@ -1,5 +1,9 @@
 import { run } from 'aoc-copilot';
 
+//       --------Part 1--------   --------Part 2--------
+// Day       Time   Rank  Score       Time   Rank  Score
+//  13   11:22:42  25899      0   18:39:23  27289      0
+
 async function solve(inputs: string[], part: number, test: boolean, additionalInfo?: { [key: string]: string }): Promise<number | string> {
     let answer = 0;
     // There are 2 claw machines with a/b buttons that both lead to prizes at the same x,y distance so
