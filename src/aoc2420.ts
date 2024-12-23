@@ -8,7 +8,7 @@ import { dijkstra } from 'aoc-copilot/dist/distance';
 
 async function solve(inputs: string[], part: number, test: boolean, additionalInfo?: { [key: string]: string }): Promise<number | string> {
     function csv(...vals: any[]) { return vals.join(','); }
-    let answer = 0, ps = parseInt(additionalInfo?.minPSSaved ?? '100');
+    let answer = 0, ps = !test ? 100 : part === 1 ? 1 : 50;
     const path = inputs.map(input => input.split(''));
     let ey = path.findIndex(row => row.includes('E'));
     let ex = path[ey].indexOf('E');
