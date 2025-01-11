@@ -36,12 +36,12 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
         if (test) {
             for (let n = 0, nn = '00'; n < max; n++, nn = n.toString().padStart(2, '0')) {
                 if ([[0, 0], [0, 1], [1, 0], [1, 1]].some(([a, b]) => {
-                    if (a === 1) wires.set('x' + nn, 1);
-                    if (b === 1) wires.set('y' + nn, 1);
+                    wires.set('x' + nn, a);
+                    wires.set('y' + nn, b);
                     const expected = a & b ? 2 ** n : 0;
                     const actual = parseInt([...Array(max).keys()].reverse().reduce((bits, z) => bits + s(`z${z.toString().padStart(2, '0')}`), ''), 2);;
-                    if (a === 1) wires.set('x' + nn, 0);
-                    if (b === 1) wires.set('y' + nn, 0);
+                    wires.set('x' + nn, 0);
+                    wires.set('y' + nn, 0);
                     return actual !== expected;
                 })) swaps.add('z' + nn);
             }
@@ -55,11 +55,8 @@ async function solve(inputs: string[], part: number, test: boolean, additionalIn
                     const xor2 = findGate(xor1.out, 'XOR', cin.out)!;
                     const and2 = findGate(xor1.out, 'AND', cin.out)!;
                     if (xor2.out[0] !== 'z') swap(xor2.out, 'z' + nn);
-                    if (![xor1.out, cin.out].includes(xor2.in1) || ![xor1.out, cin.out].includes(xor2.in2)) {
-                        swap(xor1.out, and1.out); // It can't be Cin (OR) because that would have been caught on the last step
-                    }
-                    const or = findGate(and1.out, 'OR', and2.out)!;
-                    cin = or;
+                    else if (![xor1.out, cin.out].includes(xor2.in1) || ![xor1.out, cin.out].includes(xor2.in2)) swap(xor1.out, and1.out);
+                    cin = findGate(and1.out, 'OR', and2.out)!;
                 }
             }
         }
